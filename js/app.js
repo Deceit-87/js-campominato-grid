@@ -1,13 +1,46 @@
-const grid = document.getElementById('container')
+const GRID = document.getElementById('container');
+const PLAY_BUTTON = document.getElementById('play-btn');
+const SELECT = document.getElementById('difficult-level');
+const DIFFICULT = SELECT.value
+
+let rows;
+let cols; 
+
+PLAY_BUTTON.addEventListener('click',() =>{
+    console.log(SELECT.value)
+
+})
 
 
-const gridCell = []
 
 
-for (let i = 0; i < 100; i++) { 
-    
-    let cell = [i]
-  
-    gridCell.push(cell)
+                           // GRIGLIA 
+switch ( DIFFICULT ) {
+
+    case 'Easy':
+        rows = 10 ;
+        cols = 10 ;
+    break;
+
+
+    case 'Medium':
+        rows = 9 ;
+        cols = 9 ;
+    break;
+
+    case 'Hard':
+        rows = 7 ;
+        cols = 7 ;
+    break;
+    default:
+        rows = 10 ;
+        cols = 10 ;
 }
-console.log(gridCell)
+
+
+
+ 
+const CELL_NUMBERS = rows * cols;
+
+
+console.log(rows,cols,CELL_NUMBERS);
